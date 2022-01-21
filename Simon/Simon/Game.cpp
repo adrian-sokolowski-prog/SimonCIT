@@ -110,11 +110,13 @@ void Game::update(sf::Time t_deltaTime)
 /// </summary>
 void Game::render()
 {
-	m_window.clear(sf::Color::White);
+	m_window.clear(sf::Color::Black);
 	m_window.draw(m_redSquare);
 	m_window.draw(m_greenSquare);
 	m_window.draw(m_yellowSquare);
 	m_window.draw(m_blueSquare);
+	m_window.draw(m_titleText);
+	m_window.draw(m_redTextInstruction);
 	m_window.display();
 }
 
@@ -123,7 +125,22 @@ void Game::render()
 /// </summary>
 void Game::setupFontAndText()
 {
-	
+	if (!m_ariel.loadFromFile("ASSETS/FONTS/ariblk.ttf"))
+	{
+		std::cout << "font did not load" << std::endl;
+	}
+
+	m_titleText.setFillColor(sf::Color::Magenta);
+	m_titleText.setPosition(sf::Vector2f(400.0f, 30.0f));
+	m_titleText.setFont(m_ariel);
+	m_titleText.setCharacterSize(30);
+	m_titleText.setString("Simon Game");
+
+	m_redTextInstruction.setFillColor(RED);
+	m_redTextInstruction.setPosition(sf::Vector2f(20.0f, 20.0f));
+	m_redTextInstruction.setFont(m_ariel);
+	m_redTextInstruction.setCharacterSize(20);
+	m_redTextInstruction.setString("Press Red for\n Easy Game");
 }
 
 /// <summary>
@@ -132,19 +149,19 @@ void Game::setupFontAndText()
 void Game::setupButtons()
 {
 	m_redSquare.setFillColor(RED);
-	m_redSquare.setPosition(sf::Vector2f(200.0f, 100.0f));
+	m_redSquare.setPosition(sf::Vector2f(300.0f, 120.0f));
 	m_redSquare.setSize(sf::Vector2f(200.0f, 200.0f));
 
 	m_greenSquare.setFillColor(GREEN);
-	m_greenSquare.setPosition(sf::Vector2f(400.0f, 100.0f));
+	m_greenSquare.setPosition(sf::Vector2f(530.0f, 120.0f));
 	m_greenSquare.setSize(sf::Vector2f(200.0f, 200.0f));
 
 	m_yellowSquare.setFillColor(YELLOW);
-	m_yellowSquare.setPosition(sf::Vector2f(200.0f, 300.0f));
+	m_yellowSquare.setPosition(sf::Vector2f(300.0f, 350.0f));
 	m_yellowSquare.setSize(sf::Vector2f(200.0f, 200.0f));
 
 	m_blueSquare.setFillColor(BLUE);
-	m_blueSquare.setPosition(sf::Vector2f(400.0f, 300.0f));
+	m_blueSquare.setPosition(sf::Vector2f(530.0f, 350.0f));
 	m_blueSquare.setSize(sf::Vector2f(200.0f, 200.0f));
 	
 	

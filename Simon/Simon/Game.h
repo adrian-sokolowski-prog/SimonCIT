@@ -44,6 +44,14 @@ private:
 	sf::RectangleShape m_yellowSquare; // yellow square creation
 	sf::RectangleShape m_blueSquare; // blue square creation
 
+	sf::Font m_ariel; // font loading
+
+	sf::Text m_titleText; // name of the title 
+	sf::Text m_redTextInstruction; // instruction for the user using the red text
+	sf::Text m_greenTextInstruction; // instruction for the user using the green text
+	sf::Text m_yellowTextInstruction; // instruction for the user using the yellow text
+	sf::Text m_blueTextInstruction; // instruction for the user using the blue text
+
 	bool m_exitGame; // control exiting game
 
 };

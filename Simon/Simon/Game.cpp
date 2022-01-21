@@ -17,7 +17,7 @@
 /// </summary>
 Game::Game() :
 	m_window{ sf::VideoMode{ 800U, 600U, 32U }, "SFML Game" },
-	m_redSquare(sf::Vector2f(200.0f, 200.0f)),
+	
 	m_exitGame{false} //when true game will exit
 {
 	setupFontAndText(); // load font 
@@ -112,6 +112,9 @@ void Game::render()
 {
 	m_window.clear(sf::Color::White);
 	m_window.draw(m_redSquare);
+	m_window.draw(m_greenSquare);
+	m_window.draw(m_yellowSquare);
+	m_window.draw(m_blueSquare);
 	m_window.display();
 }
 
@@ -129,7 +132,20 @@ void Game::setupFontAndText()
 void Game::setupButtons()
 {
 	m_redSquare.setFillColor(RED);
-	m_redSquare.setPosition(sf::Vector2f(200.0f, 200.0f));
+	m_redSquare.setPosition(sf::Vector2f(200.0f, 100.0f));
+	m_redSquare.setSize(sf::Vector2f(200.0f, 200.0f));
+
+	m_greenSquare.setFillColor(GREEN);
+	m_greenSquare.setPosition(sf::Vector2f(400.0f, 100.0f));
+	m_greenSquare.setSize(sf::Vector2f(200.0f, 200.0f));
+
+	m_yellowSquare.setFillColor(YELLOW);
+	m_yellowSquare.setPosition(sf::Vector2f(200.0f, 300.0f));
+	m_yellowSquare.setSize(sf::Vector2f(200.0f, 200.0f));
+
+	m_blueSquare.setFillColor(BLUE);
+	m_blueSquare.setPosition(sf::Vector2f(400.0f, 300.0f));
+	m_blueSquare.setSize(sf::Vector2f(200.0f, 200.0f));
 	
 	
 }

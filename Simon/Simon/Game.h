@@ -9,8 +9,11 @@
 /// Don't forget the endif at the bottom
 /// </summary>
 #include <SFML/Graphics.hpp>
-
+// setup for colors used in squares
 const sf::Color RED{ 180,0,0,255 };
+const sf::Color GREEN{ 0,180,0,255 };
+const sf::Color BLUE{ 0,0,180,255 };
+const sf::Color YELLOW{ 180,180,0,255 };
 
 class Game
 {
@@ -35,7 +38,12 @@ private:
 	
 
 	sf::RenderWindow m_window; // main SFML window
+
 	sf::RectangleShape m_redSquare; // red square creation
+	sf::RectangleShape m_greenSquare; // green square creation
+	sf::RectangleShape m_yellowSquare; // yellow square creation
+	sf::RectangleShape m_blueSquare; // blue square creation
+
 	bool m_exitGame; // control exiting game
 
 };

@@ -117,6 +117,9 @@ void Game::render()
 	m_window.draw(m_blueSquare);
 	m_window.draw(m_titleText);
 	m_window.draw(m_redTextInstruction);
+	m_window.draw(m_greenTextInstruction);
+	m_window.draw(m_yellowTextInstruction);
+	m_window.draw(m_blueTextInstruction);
 	m_window.display();
 }
 
@@ -139,8 +142,26 @@ void Game::setupFontAndText()
 	m_redTextInstruction.setFillColor(RED);
 	m_redTextInstruction.setPosition(sf::Vector2f(20.0f, 20.0f));
 	m_redTextInstruction.setFont(m_ariel);
-	m_redTextInstruction.setCharacterSize(20);
+	m_redTextInstruction.setCharacterSize(30);
 	m_redTextInstruction.setString("Press Red for\n Easy Game");
+
+	m_greenTextInstruction.setFillColor(GREEN);
+	m_greenTextInstruction.setPosition(sf::Vector2f(20.0f, 170.0f));
+	m_greenTextInstruction.setFont(m_ariel);
+	m_greenTextInstruction.setCharacterSize(30);
+	m_greenTextInstruction.setString("Press Green for\n Normal Game");
+
+	m_yellowTextInstruction.setFillColor(YELLOW);
+	m_yellowTextInstruction.setPosition(sf::Vector2f(20.0f, 320.0f));
+	m_yellowTextInstruction.setFont(m_ariel);
+	m_yellowTextInstruction.setCharacterSize(30);
+	m_yellowTextInstruction.setString("Press Yellow for\n Hard Game");
+
+	m_blueTextInstruction.setFillColor(BLUE);
+	m_blueTextInstruction.setPosition(sf::Vector2f(20.0f, 470.0f));
+	m_blueTextInstruction.setFont(m_ariel);
+	m_blueTextInstruction.setCharacterSize(30);
+	m_blueTextInstruction.setString("Press Blue Too\n Exit Game");
 }
 
 /// <summary>
